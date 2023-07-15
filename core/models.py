@@ -5,7 +5,7 @@ from django.db import models
 
 class Url(models.Model):
     url = models.URLField(max_length=255)
-    hashed_url = models.CharField(max_length=10, blank=True)
+    hashed_url = models.CharField(max_length=10, unique=True)
 
     def __str__(self):
         return f"{self.pk} - {self.url} - {self.hashed_url}"
